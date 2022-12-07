@@ -1,0 +1,268 @@
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: end;
+    margin: 0 !important;
+}
+
+.panel1 {
+    background-color: #fff;
+    height: 70vh;
+    width: 100%;
+}
+
+.cd-container {
+    /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+    width: 70%;
+    box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+
+}
+
+.cd-container p {
+    text-align: center;
+}
+
+.cd-container::after {
+    /* clearfix */
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.cd-main-content {
+    /* you need to assign a min-height to the main content so that the children can inherit it*/
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.cd-fixed-bg {
+    position: relative;
+    min-height: 75%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+}
+
+.cd-fixed-bg h1,
+.cd-fixed-bg h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    max-width: 1170px;
+    text-align: center;
+    font-size: 30px;
+    font-size: 1.875rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.cd-fixed-bg.cd-bg-1 {
+    background-image: url('../public/assets/back.jpg');
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cd-fixed-bg.cd-bg-2 {
+    background-image: url('../public/assets/bg2.jpg');
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cd-fixed-bg.cd-bg-3 {
+    background-image: url('../public/assets/bg3.jpg');
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cd-fixed-bg.cd-bg-4 {
+    background-image: url('../public/assets/bg4.jpg');
+
+}
+
+.opa {
+    width: 100%;
+    height: 800px;
+    z-index: 1;
+    background-color: rgb(0 0 0 / 43%);
+}
+
+@media only screen and (min-width: 320px) {
+
+    .cd-fixed-bg h1,
+    .cd-fixed-bg h2 {
+        font-size: 36px;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .cd-fixed-bg {
+        background-attachment: fixed;
+    }
+
+    .cd-fixed-bg h1,
+    .cd-fixed-bg h2 {
+        font-size: 48px;
+        font-weight: 300;
+    }
+}
+
+.cd-scrolling-bg {
+    display: grid;
+    justify-items: center;
+    position: relative;
+    min-height: 50%;
+    padding: 4em 0;
+    line-height: 1.6;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.cd-scrolling-bg.cd-color-1 {
+    background-color: #fff;
+    color: #000;
+}
+
+.cd-scrolling-bg.cd-color-2 {
+    background-color: #fff;
+    color: #000;
+}
+
+.cd-scrolling-bg.cd-color-3 {
+    background-color: #fff;
+    color: #000;
+}
+
+@media only screen and (min-width: 480px) {
+    .cd-scrolling-bg {
+        padding: 8em 0;
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 2;
+        font-weight: 300;
+    }
+}
+
+
+#name {
+    color: #000;
+    text-align: center;
+}
+
+
+ol.gradient-list {
+    counter-reset: gradient-counter;
+    list-style: none;
+    margin: 1.75rem 0;
+    padding-left: 1rem;
+}
+
+ol.gradient-list li {
+    background: white;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    counter-increment: gradient-counter;
+    margin-top: 1rem;
+    min-height: 3rem;
+    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
+}
+
+ol.gradient-list li::before,
+ol.gradient-list li::after {
+    background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
+    border-radius: 1rem 1rem 0 1rem;
+    content: "";
+    height: 3rem;
+    left: -1rem;
+    overflow: hidden;
+    position: absolute;
+    top: -1rem;
+    width: 3rem;
+}
+
+ol.gradient-list li::before {
+    align-items: flex-end;
+    content: counter(gradient-counter);
+    color: #1d1f20;
+    display: flex;
+    font: 900 1.5em/1 "Montserrat";
+    justify-content: flex-end;
+    padding: 0.125em 0.25em;
+    z-index: 1;
+}
+
+ol.gradient-list>li,
+ol.gradient-list>li::before {
+    box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+}
+
+ol.gradient-list li:nth-child(10n + 1):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li:nth-child(10n + 2):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li:nth-child(10n + 3):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li:nth-child(10n + 4):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li:nth-child(10n + 5):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li:nth-child(10n + 6):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li:nth-child(10n + 7):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li:nth-child(10n + 8):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li:nth-child(10n + 9):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li:nth-child(10n + 10):before {
+    background: linear-gradient(135deg, rgba(68, 137, 226, 0.2) 0%, rgba(18, 218, 101, 0.2) 100%);
+}
+
+ol.gradient-list li+li {
+    margin-top: 2rem;
+}
+
+.main {
+    display: block;
+    margin: 0 auto;
+    max-width: 40rem;
+    padding: 1rem;
+}
